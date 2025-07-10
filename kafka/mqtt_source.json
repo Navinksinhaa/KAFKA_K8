@@ -1,0 +1,15 @@
+{
+  "name": "mqtt-source-connector",
+  "config": {
+    "connector.class": "com.datamountaineer.streamreactor.connect.mqtt.source.MqttSourceConnector",
+    "tasks.max": "1",
+    "mqtt.connection.clean": "true",
+    "mqtt.connection.timeout": "1000",
+    "mqtt.kcql": "INSERT INTO iot-events SELECT * FROM sensors/",
+    "mqtt.qos": "1",
+    "mqtt.url": "tcp://mqtt:1883",
+    "mqtt.client.id": "mqtt-source",
+    "topics": "sensors/#",
+    "kafka.topic": "iot-events"
+  }
+}
